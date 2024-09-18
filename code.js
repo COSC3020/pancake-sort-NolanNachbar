@@ -1,12 +1,11 @@
 function flip(array, n) {
-    return array;	  if (n >= array.length) {
-}	      n = array.length - 1;
-
+  if (n >= array.length) {
+      n = array.length - 1;
   }
-// Use only flip() here to manipulate the array	
-function pancakeSort(array) {	  for (let i = 0; i < n; i++) {
-    return array;	      swap(array, i, n); 
-}	      n--;
+
+  for (let i = 0; i < n; i++) {
+      swap(array, i, n); 
+      n--;
   }
 }
 
