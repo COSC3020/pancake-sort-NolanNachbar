@@ -28,5 +28,3 @@ function panhelp(array,size){
   }
   return index;
 }
-
-console.log(pancakeSort([3,54,3,43,2,4,9]));
