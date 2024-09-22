@@ -29,3 +29,52 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+Recall my implementation,
+```js
+function flip(array, r) {
+    var l = 0;
+    while(l < r){
+      var temp = array[r];
+      array[r] = array[l];
+      array[l] = temp;
+      l++;
+      r--;
+    }
+}
+
+// This will sort by first finding the maximum element in the not sorted part of the array then it will flip that element to the front and finally it will flip that to the very back
+function pancakeSort(array) {
+  for (var i = array.length; i > 1; i--){
+    var maxindex = panhelp(array,i);
+    if(maxindex != i - 1){
+      flip(array, maxindex);
+      flip(array, i - 1);
+    }
+  }
+    return array;
+}
+
+// This function will find the largest element in the array
+function panhelp(array, size){
+  var index = 0;
+
+  for (var i = 1; i < size; i++){
+    if (array[i] > array[index]) index = i;
+  }
+  return index;
+}
+```
+
+## Comparisons
+To find the max element in the unsorted array it needs to look through the entire unsorted array, this means $\Theta(n^2)$ comparisons.
+
+## Flips
+The way that the sorting works is that it will first finding the maximum element in the not sorted part of the array then it will flip that element to the front and finally it will flip that to the very back. So for every element it will flip it twice, $2n$ flips. Thus the asymptotic runtime is $\Theta(n)$. 
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+I looked at this to help me understand how to go about implementing it, mainly the functionality behind the flipping. 
+https://www.geeksforgeeks.org/pancake-sorting/
+
+I looked at this to make sure I was counting the comparisons right. 
+https://github.com/COSC3020/pancake-sort-Hinckley28
