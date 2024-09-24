@@ -69,7 +69,7 @@ function panhelp(array, size){
 To find the max element in the unsorted array it needs to look through the entire unsorted array each iteration, this means $\Theta(n^2)$ comparisons.
 
 ## Flips
-The way that the sorting works is that it will first finding the maximum element in the not sorted part of the array then it will flip that element to the front and finally it will flip that to the very back. So for every element it will flip it twice, $2n$ flips. Thus the asymptotic runtime is $\Theta(n)$. 
+The way that the sorting works is that it will first finding the maximum element in the not sorted part of the array then it will flip that element to the front and finally it will flip that to the very back. So for every element it will flip it twice, $2n$ flips. Thus the asymptotic number of flips is $\Theta(n)$. 
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
